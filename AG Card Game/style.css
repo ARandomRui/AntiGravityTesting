@@ -1,0 +1,267 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --accent-color: #4caf50;
+    /* Farming Green */
+    --danger-color: #f44336;
+    /* Dungeon Red */
+    --card-bg: #333;
+    --panel-bg: #222;
+    --border-color: #444;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    /* Minimalistic/Retro feel */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+nav button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+nav button.active {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+#game-view {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.view {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Farming Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.plot {
+    border: 1px dashed var(--border-color);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 0.2s;
+}
+
+.plot.drag-over {
+    background-color: rgba(76, 175, 80, 0.3);
+    border-style: solid;
+    border-color: var(--accent-color);
+}
+
+/* Dungeon View */
+#battle-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+}
+
+#enemy-area {
+    border: 1px solid var(--danger-color);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    background: #300;
+}
+
+#player-area {
+    border: 1px solid var(--accent-color);
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+/* Card Interface */
+#card-interface {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#action-queue {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    background: #2a2a2a;
+    padding: 5px;
+}
+
+#queue-slots {
+    display: flex;
+    gap: 5px;
+    flex-grow: 1;
+    min-height: 30px;
+    border: 1px inset var(--border-color);
+    padding: 2px;
+    align-items: center;
+}
+
+.queue-item {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 2px 5px;
+    font-size: 0.8em;
+    border-radius: 2px;
+}
+
+#hand-area {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.card {
+    width: 80px;
+    height: 110px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 5px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--text-color);
+}
+
+.card-cost {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#btn-end-turn {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Shop */
+.shop-item {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop-item button {
+    background: var(--accent-color);
+    border: none;
+    color: var(--bg-color);
+    padding: 5px 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <div class="glass-card">
+            <header class="app-header">
+                <nav class="mode-switch">
+                    <button class="nav-btn active" data-target="calculator">Calculator</button>
+                    <button class="nav-btn" data-target="converter">Converter</button>
+                </nav>
+            </header>
+
+            <main>
+                <!-- Calculator Section -->
+                <section id="calculator" class="view active">
+                    <div class="display-container">
+                        <div class="history" id="calc-history"></div>
+                        <div class="current-input" id="calc-display">0</div>
+                    </div>
+                    <div class="keypad">
+                        <button class="btn btn-op" data-action="clear">AC</button>
+                        <button class="btn btn-op" data-action="delete">DEL</button>
+                        <button class="btn btn-op" data-action="percent">%</button>
+                        <button class="btn btn-op" data-action="operator" data-value="/">÷</button>
+
+                        <button class="btn" data-value="7">7</button>
+                        <button class="btn" data-value="8">8</button>
+                        <button class="btn" data-value="9">9</button>
+                        <button class="btn btn-op" data-action="operator" data-value="*">×</button>
+
+                        <button class="btn" data-value="4">4</button>
+                        <button class="btn" data-value="5">5</button>
+                        <button class="btn" data-value="6">6</button>
+                        <button class="btn btn-op" data-action="operator" data-value="-">-</button>
+
+                        <button class="btn" data-value="1">1</button>
+                        <button class="btn" data-value="2">2</button>
+                        <button class="btn" data-value="3">3</button>
+                        <button class="btn btn-op" data-action="operator" data-value="+">+</button>
+
+                        <button class="btn btn-zero" data-value="0">0</button>
+                        <button class="btn" data-value=".">.</button>
+                        <button class="btn btn-eq" data-action="calculate">=</button>
+                    </div>
+                </section>
+
+                <!-- Converter Section -->
+                <section id="converter" class="view hidden">
+                    <div class="converter-wrapper">
+                        <div class="input-group">
+                            <label>Value</label>
+                            <input type="number" id="convert-input" placeholder="0">
+                        </div>
+                        
+                        <div class="controls">
+                            <div class="select-wrapper">
+                                <label>Type</label>
+                                <select id="convert-type">
+                                    <option value="distance">Distance</option>
+                                    <option value="temperature">Temperature</option>
+                                </select>
+                            </div>
+
+                            <div class="swap-container">
+                                <button id="swap-units" class="icon-btn" title="Swap Units">
+                                    ⇄
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="unit-display">
+                            <div class="unit-box">
+                                <span class="unit-label" id="from-unit-label">Miles</span>
+                                <span class="arrow">⬇</span>
+                                <span class="unit-label" id="to-unit-label">Kilometers</span>
+                            </div>
+                        </div>
+
+                        <div class="result-box">
+                            <span class="result-label">Result</span>
+                            <div class="result-value" id="convert-result">0</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+:root {
+    --primary-bg: #0f0c29;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #a9a9a9;
+    --accent-color: #ff00cc;
+    --accent-gradient: linear-gradient(135deg, #ff00cc, #333399);
+    --btn-bg: rgba(255, 255, 255, 0.05);
+    --btn-hover: rgba(255, 255, 255, 0.15);
+    --btn-active: rgba(255, 255, 255, 0.25);
+    --op-btn-color: #ff9966;
+    --eq-btn-bg: #ff00cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: var(--primary-bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--text-primary);
+}
+
+/* Background Animation */
+.background-blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: #ff00cc;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: #333399;
+    animation-delay: -2s;
+}
+
+.blob-3 {
+    top: 40%;
+    left: 40%;
+    width: 300px;
+    height: 300px;
+    background: #00bcd4;
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(20px, 40px) scale(1.1); }
+}
+
+/* Glass Container */
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Header & Nav */
+.app-header {
+    margin-bottom: 24px;
+}
+
+.mode-switch {
+    display: flex;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.nav-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.nav-btn.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Sections */
+.view {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Calculator Styles */
+.display-container {
+    text-align: right;
+    margin-bottom: 24px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.history {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    min-height: 1.2em;
+}
+
+.current-input {
+    font-size: 2.5rem;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    background: var(--btn-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-op {
+    color: var(--op-btn-color);
+    font-weight: 600;
+}
+
+.btn-eq {
+    background: var(--eq-btn-bg);
+    border: none;
+    grid-column: span 2;
+    font-weight: 600;
+}
+
+.btn-eq:hover {
+    background: #ff33d4;
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* Converter Styles */
+.converter-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group, .select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+input[type="number"] {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 14px;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: var(--accent-color);
+}
+
+select {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 12px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    appearance: none; /* simple styling hack */
+    cursor: pointer;
+}
+
+select option {
+    background: var(--primary-bg);
+    color: white;
+}
+
+.swap-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.icon-btn {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon-btn:hover {
+    background: rgba(255,255,255,0.2);
+    transform: rotate(180deg);
+}
+
+.unit-display {
+    background: rgba(255,255,255,0.02);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.unit-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--op-btn-color);
+}
+
+.result-box {
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.result-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.result-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    word-break: break-all;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Alexander Maximus Aurelius Hawthorne IV, a Backend Engineer.">
+    <title>Alexander Hawthorne | Backend Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <nav class="navbar">
+        <div class="logo">AMAH IV.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content fade-in">
+                <span class="greeting">Hello, I'm</span>
+                <h1 class="glitch-text" data-text="Alexander Maximus Aurelius Hawthorne IV">Alexander Maximus Aurelius
+                    Hawthorne IV</h1>
+                <p class="subtitle">Backend Engineer</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary">Get in Touch</a>
+                    <a href="#about" class="btn secondary">View Work</a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in delay-1">
+                <!-- Abstract coding visual or placeholder -->
+                <div class="code-card">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <pre><code>const creator = {
+  name: "Alex Hawthorne",
+  passion: "Backend Engineering",
+  status: "Looking for CEO Positions!"
+};</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container section-fade">
+                <h2>About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Hi! I'm Alex, a software developer specializing in solution architecture. I like planning
+                            projects and have a lot of projects under my belt. Feel free to contact me, happy to chat!
+                        </p>
+                        <p>With a strong foundation in backend systems, I build scalable and efficient solutions.</p>
+                        <ul class="skills-list">
+                            <li>Python</li>
+                            <li>Machine Learning</li>
+                            <li>AI Fine Tuning</li>
+                            <li>C++</li>
+                            <li>Web Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container section-fade">
+                <h2>Let's Connect</h2>
+                <div class="contact-wrapper">
+                    <form id="contact-form" class="glass-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="How can I help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn primary submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Alexander Hawthorne. Built with <span class="heart">♥</span> and Code.</p>
+    </footer>
+</body>
+
+</html>

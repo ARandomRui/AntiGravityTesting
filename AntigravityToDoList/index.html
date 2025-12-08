@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus | Premium To-Do</title>
+    <meta name="description" content="A simple, premium to-do list application.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <main class="glass-container">
+        <header>
+            <h1>My Tasks</h1>
+            <p class="date-display" id="dateDisplay">Loading date...</p>
+        </header>
+
+        <div class="input-group">
+            <input type="text" id="todoInput" placeholder="What needs to be done?" aria-label="New task name">
+            <button id="addBtn" aria-label="Add task">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <ul class="todo-list" id="todoList">
+            <!-- Tasks will appear here -->
+        </ul>
+        
+        <div class="empty-state" id="emptyState">
+            <p>All caught up! 🎉</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
