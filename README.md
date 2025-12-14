@@ -11,6 +11,6 @@ In addition to these five guided projects, one self-designed project (AG Card Ga
 Click here below to explore the sites created! 
 
 Calculator App - (https://arandomrui.github.io/AntiGravityTesting/AntigravityCalc/)  
-Portfolio site - (https://arandomrui.github.io/AntiGravityTesting/antigravityportfolio/)  
-To do list - (https://arandomrui.github.io/AntiGravityTesting/antigravitytodolist/)
+Portfolio site - (https://arandomrui.github.io/AntiGravityTesting/AntigravityPortfolio/)  
+To do list - (https://arandomrui.github.io/AntiGravityTesting/AntigravityToDoList/)
 
