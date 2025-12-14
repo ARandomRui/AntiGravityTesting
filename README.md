@@ -9,5 +9,8 @@ Five projects were selected based on the recommended prompts from
 In addition to these five guided projects, one self-designed project (AG Card Game) was created to test how **Antigravity** responds to more creative, less structured prompts. This allows evaluation of the system’s limitations, flexibility, and behavior when dealing with unconventional or imaginative project requests.
 
 Click here below to explore the sites created! 
+
 Calculator App - (https://arandomrui.github.io/AntiGravityTesting/AntigravityCalc/)
+Portfolio site - (https://arandomrui.github.io/AntiGravityTesting/antigravityportfolio/)
+To do list - (https://arandomrui.github.io/AntiGravityTesting/antigravitytodolist/)
 
