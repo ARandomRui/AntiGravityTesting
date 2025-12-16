@@ -1,4 +1,4 @@
-# Final Year Project Overview
+# Testing Vibe Coding With AntiGravity
 
 This project explores the limits and opportunities of **vibe coding**, focusing on how modern AI coding agents handle creativity, ambiguity, and open-ended prompts.
 
